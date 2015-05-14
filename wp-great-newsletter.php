@@ -161,22 +161,22 @@ function wp_great_newsletter_render_shortcode() {
             $shortcode .= '<form id="wp_great_newsletter_suscribe_form_' . $rand_suscribe . '" class="wp_great_newsletter_suscribe_form" name="' . $rand_suscribe . '" method="post">' . "\n";
                 $shortcode .= '<span class="form-part">'; 
                     $shortcode .= '<label for="wp_great_newsletter_email">Email:</label>'."\n";
-                    $shortcode .= '<input style="background-color:#' . $wp_great_newsletter_color_field . '; color:#' . $wp_great_newsletter_text_color_field . '" type="text" name="wp_great_newsletter_email" id="wp_great_newsletter_email" value="" />' . "\n";
+                    $shortcode .= '<input style="background-color:' . $wp_great_newsletter_color_field . '; color:' . $wp_great_newsletter_text_color_field . '" type="text" name="wp_great_newsletter_email" id="wp_great_newsletter_email" value="" />' . "\n";
                 $shortcode .= '</span>';
                 if ( $wp_great_newsletter_name > 0 ) {
                     $shortcode .= '<span class="form-part">';        
                         $shortcode .= '<label for="wp_great_newsletter_name">Name:</label>'."\n";
-                        $shortcode .= '<input style="background-color:#' . $wp_great_newsletter_color_field . '; color:#' . $wp_great_newsletter_text_color_field . '" type="text" name="wp_great_newsletter_name" id="wp_great_newsletter_name" value="" />' . "\n";
+                        $shortcode .= '<input style="background-color:' . $wp_great_newsletter_color_field . '; color:' . $wp_great_newsletter_text_color_field . '" type="text" name="wp_great_newsletter_name" id="wp_great_newsletter_name" value="" />' . "\n";
                     $shortcode .= '</span>';
                 }
                 if ( $wp_great_newsletter_telephone > 0 ) {
                     $shortcode .= '<span class="form-part">';    
                         $shortcode .= '<label for="wp_great_newsletter_telephone">Telephone:</label>'."\n";
-                        $shortcode .= '<input style="background-color:#'.$wp_great_newsletter_color_field.'; color:#'.$wp_great_newsletter_text_color_field.'" type="text" name="wp_great_newsletter_telephone" id="wp_great_newsletter_telephone" value="" />' . "\n";
+                        $shortcode .= '<input style="background-color:'.$wp_great_newsletter_color_field.'; color:'.$wp_great_newsletter_text_color_field.'" type="text" name="wp_great_newsletter_telephone" id="wp_great_newsletter_telephone" value="" />' . "\n";
                     $shortcode .= '</span>';
                 }
                 $shortcode .= '<span class="form-part">';
-                    $shortcode .= '<button type="submit" style="background-color:#'.$wp_great_newsletter_color_button.'; color:#'.$wp_great_newsletter_text_color_button.'">Subscribe now</button>' . "\n";
+                    $shortcode .= '<button type="submit" style="background-color:'.$wp_great_newsletter_color_button.'; color:'.$wp_great_newsletter_text_color_button.'">Subscribe now</button>' . "\n";
                     if ( $wp_great_newsletter_unsubscribe_option > 0 ) {
                         $shortcode .= '<a onclick="wp_great_newsletter_action_unsubscribe(\'' . $rand_suscribe . '\', \'' . $rand_unsuscribe . '\');">Unsubscribe</a>' . "\n";
                     }
@@ -188,10 +188,10 @@ function wp_great_newsletter_render_shortcode() {
             $shortcode .= '<form id="wp_great_newsletter_unsuscribe_form_' . $rand_unsuscribe . '" class="wp_great_newsletter_unsuscribe_form" name="' . $rand_unsuscribe . '" method="post">' . "\n";
                 $shortcode .= '<span class="form-part">'; 
                     $shortcode .= '<label for="wp_great_newsletter_email">Email:</label>'."\n";
-                    $shortcode .= '<input style="background-color:#' . $wp_great_newsletter_color_field . '; color:#' . $wp_great_newsletter_text_color_field . '" type="text" name="wp_great_newsletter_email" id="wp_great_newsletter_email" value="" />' . "\n";
+                    $shortcode .= '<input style="background-color:' . $wp_great_newsletter_color_field . '; color:' . $wp_great_newsletter_text_color_field . '" type="text" name="wp_great_newsletter_email" id="wp_great_newsletter_email" value="" />' . "\n";
                 $shortcode .= '</span>';
                 $shortcode .= '<span class="form-part">';
-                    $shortcode .= '<button type="submit" style="background-color:#' . $wp_great_newsletter_color_button . '; color:#' . $wp_great_newsletter_text_color_button . '">Unsubscribe</button>' . "\n";
+                    $shortcode .= '<button type="submit" style="background-color:' . $wp_great_newsletter_color_button . '; color:' . $wp_great_newsletter_text_color_button . '">Unsubscribe</button>' . "\n";
                     if ( $wp_great_newsletter_unsubscribe_option > 0 ) {
                         $shortcode .= '<a onclick="wp_great_newsletter_action_subscribe(\'' . $rand_unsuscribe . '\', \'' . $rand_suscribe . '\');">Subscribe</a>' . "\n";
                     }
