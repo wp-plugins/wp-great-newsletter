@@ -55,7 +55,7 @@ If you want the user to have the ability to unsubscribe from the newsletter, it 
 
 == Changelog ==
 
-= Version 1.1 =
+= Version 1.2 =
 * 	Fixed: Link donate button
 
 = Version 1.1 =
