@@ -3,14 +3,14 @@
 Plugin Name: WP Great Newsletter
 Plugin URI: http://www.studiosweb.es/
 Description: With this plugin you can create and customize a subscription form on your website where visitors can leave their details so that you can then export them freely and use them all the time for sending newsletter with external postmaster programs.
-Version: 1.3
+Version: 1.4
 Author: Alberto Pérez
 Author URI: http://www.studiosweb.es
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R3XEYFJ22BUTG
 License: A "Slug" license name e.g. GPL2
 */
 
-define( 'WP_GREAT_NEWSLETTER_VERSION', '1.3' );
+define( 'WP_GREAT_NEWSLETTER_VERSION', '1.4' );
 define( 'WP_GREAT_NEWSLETTER_DIR', plugin_dir_path(__FILE__) );
 define( 'WP_GREAT_NEWSLETTER_URL', plugin_dir_url(__FILE__) );
 
@@ -77,15 +77,6 @@ function wp_great_newsletter_activation() {
     require_once( ABSPATH.'wp-admin/includes/upgrade.php' );
         
     dbDelta( $sql );
-
-    update_option( 'wp_great_newsletter_text_color_button', 'ffffff' );
-    update_option( 'wp_great_newsletter_text_color_field', '999999' );
-    update_option( 'wp_great_newsletter_color_button', '000000' );
-    update_option( 'wp_great_newsletter_color_field', 'f7f7f2' );
-    update_option( 'wp_great_newsletter_name', '1' );
-    update_option( 'wp_great_newsletter_telephone', '1' );
-    update_option( 'wp_great_newsletter_type', '1' );
-    update_option( 'wp_great_newsletter_unsubscribe_option', '1' );
 
 }
 
