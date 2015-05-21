@@ -3,14 +3,14 @@
 Plugin Name: WP Great Newsletter
 Plugin URI: http://www.studiosweb.es/
 Description: With this plugin you can create and customize a subscription form on your website where visitors can leave their details so that you can then export them freely and use them all the time for sending newsletter with external postmaster programs.
-Version: 1.2
+Version: 1.3
 Author: Alberto Pérez
 Author URI: http://www.studiosweb.es
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R3XEYFJ22BUTG
 License: A "Slug" license name e.g. GPL2
 */
 
-define( 'WP_GREAT_NEWSLETTER_VERSION', '1.2' );
+define( 'WP_GREAT_NEWSLETTER_VERSION', '1.3' );
 define( 'WP_GREAT_NEWSLETTER_DIR', plugin_dir_path(__FILE__) );
 define( 'WP_GREAT_NEWSLETTER_URL', plugin_dir_url(__FILE__) );
 
@@ -102,7 +102,7 @@ add_action( 'admin_menu', 'wp_great_newsletter_menu' );
 
 function wp_great_newsletter_menu() {
     
-    add_menu_page( 'WP Great Newsletter', 'WP Great Newsletter', 'manage_options', 'wp_great_newsletter_options_page', 'wp_great_newsletter_import_options_page', WP_GREAT_NEWSLETTER_URL . 'admin/images/wp-great-newsletter-icon.png', 102 );
+    add_menu_page( 'WP Great Newsletter', 'WP Great Newsletter', 'manage_options', 'wp_great_newsletter_options_page', 'wp_great_newsletter_import_options_page', WP_GREAT_NEWSLETTER_URL . 'admin/images/wp-great-newsletter-icon.png' );
     $hook = add_submenu_page( 'wp_great_newsletter_options_page', 'Subscribers List', 'Subscribers List', 'manage_options', 'wp_great_newsletter_subscribers_page', 'wp_great_newsletter_import_subscribers_page' );
     add_submenu_page( 'wp_great_newsletter_options_page', 'Documentation', 'Documentation', 'manage_options', 'wp_great_newsletter_information_page', 'wp_great_newsletter_import_information_page' );
     add_action( "load-$hook", 'wp_great_newsletter_add_options' );

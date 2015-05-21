@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: newsletter, suscription, suscribers, email form, subscriber plugin, suscriber form, subscribers form on page.
 Requires at least: 3.4
 Tested up to: 4.2.2
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,13 +55,14 @@ If you want the user to have the ability to unsubscribe from the newsletter, it 
 
 == Changelog ==
 
+= Version 1.3 =
+* 	Fixed: Admin menu link
+
 = Version 1.2 =
 * 	Fixed: Link donate button
 
 = Version 1.1 =
 * 	Fixed: wp list table not found
-
-
 
 = Version 1.0 =
 * 	initial version
