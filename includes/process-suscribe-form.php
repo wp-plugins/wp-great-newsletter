@@ -7,7 +7,7 @@ if( is_email( $wp_great_newsletter_email ) ) {
 	
 	global $wpdb;
         
-	$user_count = $wpdb->get_var( "SELECT COUNT(*) FROM '.$wpdb->prefix.'_great_newsletter WHERE email='" . $wp_great_newsletter_email . "'" );
+	$user_count = $wpdb->get_var( "SELECT COUNT(*) FROM " . $wpdb->prefix . "_great_newsletter WHERE email='" . $wp_great_newsletter_email . "'" );
 	
         if ($user_count > 0){
             
