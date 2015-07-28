@@ -9,7 +9,9 @@ if( ! empty( $_POST['Submit'] ) && $_POST['Submit'] == 'Save options' ) {
     $wp_great_newsletter_telephone = isset( $_POST['wp_great_newsletter_telephone'] ) ? $_POST['wp_great_newsletter_telephone'] : null;
     $wp_great_newsletter_type = isset( $_POST['wp_great_newsletter_type'] ) ? $_POST['wp_great_newsletter_type'] : null;
     $wp_great_newsletter_unsubscribe_option = isset( $_POST['wp_great_newsletter_unsubscribe_option'] ) ? $_POST['wp_great_newsletter_unsubscribe_option'] : null;
-
+    $wp_great_newsletter_privacy_policy = isset( $_POST['wp_great_newsletter_privacy_policy'] ) ? $_POST['wp_great_newsletter_privacy_policy'] : null;
+    $wp_great_newsletter_link_privacy_policy = isset( $_POST['wp_great_newsletter_link_privacy_policy'] ) ? $_POST['wp_great_newsletter_link_privacy_policy'] : null;
+    
     update_option('wp_great_newsletter_color_field', $wp_great_newsletter_color_field);
     update_option('wp_great_newsletter_color_button', $wp_great_newsletter_color_button);
     update_option('wp_great_newsletter_text_color_button', $wp_great_newsletter_text_color_button);
@@ -18,7 +20,9 @@ if( ! empty( $_POST['Submit'] ) && $_POST['Submit'] == 'Save options' ) {
     update_option('wp_great_newsletter_telephone', $wp_great_newsletter_telephone);
     update_option('wp_great_newsletter_type', $wp_great_newsletter_type);
     update_option('wp_great_newsletter_unsubscribe_option', $wp_great_newsletter_unsubscribe_option);
-
+    update_option('wp_great_newsletter_privacy_policy', $wp_great_newsletter_privacy_policy);
+    update_option('wp_great_newsletter_link_privacy_policy', $wp_great_newsletter_link_privacy_policy);
+    
     print '<div class="updated">';
         _e('Options saved.');
     print '</div>';
@@ -33,7 +37,9 @@ if( ! empty( $_POST['Submit'] ) && $_POST['Submit'] == 'Save options' ) {
     $wp_great_newsletter_telephone = get_option( 'wp_great_newsletter_telephone' );
     $wp_great_newsletter_type = get_option( 'wp_great_newsletter_type' );
     $wp_great_newsletter_unsubscribe_option = get_option( 'wp_great_newsletter_unsubscribe_option' );
-
+    $wp_great_newsletter_privacy_policy = get_option( 'wp_great_newsletter_privacy_policy' );
+    $wp_great_newsletter_link_privacy_policy = get_option( 'wp_great_newsletter_link_privacy_policy' );
+            
     if ( $wp_great_newsletter_name > 0 ) {
         
         $checked_name = "checked";
@@ -75,6 +81,26 @@ if( ! empty( $_POST['Submit'] ) && $_POST['Submit'] == 'Save options' ) {
         $checked_unsubscribe_option = false;
         
     }
+    
+    if( $wp_great_newsletter_privacy_policy == 1 ) {
+        
+        $checked_privacy_policy = "checked";
+        
+    } else {
+        
+        $checked_privacy_policy = false;
+        
+    }
+    
+    if( $wp_great_newsletter_link_privacy_policy == "" ) {
+        
+        $checked_link_privacy_policy = "";
+        
+    }else{
+        
+        $checked_link_privacy_policy = $wp_great_newsletter_link_privacy_policy;
+        
+    }
 
 ?>
 
@@ -109,6 +135,14 @@ if( ! empty( $_POST['Submit'] ) && $_POST['Submit'] == 'Save options' ) {
                     <tr>
                         <td><?php _e( 'Enable unsubscribe link:', 'wp-great-newsletter' ); ?></td>
                         <td><input type="checkbox" name="wp_great_newsletter_unsubscribe_option" value="1" <?php echo $checked_unsubscribe_option; ?> /></td>
+                    </tr>
+                    <tr>
+                        <td><?php _e( 'Enable privacy policy:', 'wp-great-newsletter' ); ?></td>
+                        <td><input type="checkbox" name="wp_great_newsletter_privacy_policy" value="1" <?php echo $checked_privacy_policy; ?> /></td>
+                    </tr>
+                    <tr>
+                        <td><?php _e( 'Link privacy policy:', 'wp-great-newsletter' ); ?></td>
+                        <td><input type="text" name="wp_great_newsletter_link_privacy_policy" id="wp_great_newsletter_link_privacy_policy" value="<?php echo $checked_link_privacy_policy; ?>"></td>
                     </tr>
                 </table>
             </div>

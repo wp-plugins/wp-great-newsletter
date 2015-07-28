@@ -8,12 +8,19 @@ jQuery( "form.wp_great_newsletter_suscribe_form" ).submit( function( event ) {
     jQuery( box_suscribe+' #wp-great-newsletter-result' ).removeClass( "wp-great-newsletter-display-block" );
     jQuery( box_suscribe+' #wp-great-newsletter-result' ).addClass( "wp-great-newsletter-display-none" );
     jQuery( box_suscribe+' #wp_great_newsletter_email' ).removeClass( "wp-great-newsletter-input-error" );
+    jQuery( box_suscribe+' #wp_great_newsletter_privacy_policy' ).removeClass( "wp-great-newsletter-input-error" );
     var msj = '';
     var ok = true;
     var email = document.getElementById( form ).wp_great_newsletter_email.value;
+    var privacy_policy = document.getElementById( form ).wp_great_newsletter_privacy_policy;
     if ( email == "" || ! ( /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/.test( email ) ) ) {
         jQuery( box_suscribe+ ' #wp_great_newsletter_email' ).addClass( "wp-great-newsletter-input-error" );   
         msj = '<div class="wp-great-newsletter-result-false">Invalid email.</div>';
+        ok = false;
+    }
+    if ( privacy_policy.checked==0) {
+        jQuery( box_suscribe+ ' #wp_great_newsletter_privacy_policy' ).addClass( "wp-great-newsletter-input-error" );   
+        msj += '<div class="wp-great-newsletter-result-false">Privacy policy is an obligatory field</div>';
         ok = false;
     }
     if ( !ok ) {

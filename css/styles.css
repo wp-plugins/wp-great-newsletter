@@ -72,3 +72,9 @@
 .wp-great-newsletter-display-block {
     display:block !important;
 }
+
+.privacy_policy label, .privacy_policy input{
+    width:auto!important;
+    margin:0;
+    float:none;
+}

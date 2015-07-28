@@ -3,14 +3,14 @@
 Plugin Name: WP Great Newsletter
 Plugin URI: http://www.studiosweb.es/
 Description: With this plugin you can create and customize a subscription form on your website where visitors can leave their details so that you can then export them freely and use them all the time for sending newsletter with external postmaster programs.
-Version: 1.7
+Version: 1.8
 Author: Alberto Pérez
 Author URI: http://www.studiosweb.es
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R3XEYFJ22BUTG
 License: A "Slug" license name e.g. GPL2
 */
 
-define( 'WP_GREAT_NEWSLETTER_VERSION', '1.7' );
+define( 'WP_GREAT_NEWSLETTER_VERSION', '1.8' );
 define( 'WP_GREAT_NEWSLETTER_DIR', plugin_dir_path(__FILE__) );
 define( 'WP_GREAT_NEWSLETTER_URL', plugin_dir_url(__FILE__) );
 
@@ -140,6 +140,8 @@ function wp_great_newsletter_render_shortcode() {
     $wp_great_newsletter_color_field = get_option( 'wp_great_newsletter_color_field' );
     $wp_great_newsletter_text_color_field = get_option( 'wp_great_newsletter_text_color_field' );
     $wp_great_newsletter_unsubscribe_option = get_option( 'wp_great_newsletter_unsubscribe_option' );
+    $wp_great_newsletter_privacy_policy = get_option( 'wp_great_newsletter_privacy_policy' );
+    $wp_great_newsletter_link_privacy_policy = get_option( 'wp_great_newsletter_link_privacy_policy' );
 
     $protocol = isset( $_SERVER['HTTPS'] ) == 'on' ? 'https' : 'http';
     
@@ -164,6 +166,17 @@ function wp_great_newsletter_render_shortcode() {
                     $shortcode .= '<span class="form-part">';    
                         $shortcode .= '<label for="wp_great_newsletter_telephone">Telephone:</label>'."\n";
                         $shortcode .= '<input style="background-color:'.$wp_great_newsletter_color_field.'; color:'.$wp_great_newsletter_text_color_field.'" type="text" name="wp_great_newsletter_telephone" id="wp_great_newsletter_telephone" value="" />' . "\n";
+                    $shortcode .= '</span>';
+                }
+                if ( $wp_great_newsletter_privacy_policy > 0 ) {
+                    if( $wp_great_newsletter_link_privacy_policy !="" ) {
+                        $link = "<a href='".$wp_great_newsletter_link_privacy_policy."'>privacy policy</a>";
+                    }else{
+                        $link = "privacy policy";
+                    }
+                    $shortcode .= '<span class="form-part privacy_policy">';    
+                        $shortcode .= '<input type="checkbox" name="wp_great_newsletter_privacy_policy" id="wp_great_newsletter_privacy_policy" value="1" />' . "\n";
+                        $shortcode .= '<label for="wp_great_newsletter_privacy_policy">I accept the '.$link.'</label>'."\n";
                     $shortcode .= '</span>';
                 }
                 $shortcode .= '<span class="form-part">';
